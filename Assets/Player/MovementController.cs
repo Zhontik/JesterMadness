@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 
-public class PlayerController : MonoBehaviour
+public class MovementController : MonoBehaviour
 {
 
     CharacterController characterController;
@@ -23,9 +23,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        //Direction = transform.forward;
 
-        // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = true;
     }
@@ -40,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.color = Color.yellow; //цвет надписи на Боксе
+        GUI.color = Color.yellow;
         //GUI.Box(new Rect(0, 10, 120, 30), "ground: " + characterController.isGrounded);
         GUI.Box(new Rect(0, 40, 120, 30), "velocity: " + velocity.magnitude);
     }
